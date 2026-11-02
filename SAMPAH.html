@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pilah Nusantara – Data pengelolaan sampah kabupaten/kota</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="syle.css">
+</head>
+<body>
+<a class="skip" href="#data">Langsung ke tabel data</a>
+
+<div class="top">
+  <div class="wrap">
+    <header class="bar-top">
+      <a class="brand" href="#" aria-label="Pilah Nusantara, beranda">
+        <svg viewBox="0 0 32 32" width="34" height="34" aria-hidden="true">
+          <rect x="1" y="1" width="30" height="30" rx="8" fill="#F6BD16"/>
+          <path d="M9.5 12h13l-1.1 11.2a2 2 0 0 1-2 1.8h-6.8a2 2 0 0 1-2-1.8L9.5 12Zm-1.5-3.2h16V10.6H8V8.8Zm5.2-2h5.6v2h-5.6v-2Z" fill="#0C3B5C"/>
+        </svg>
+        <span>
+          <span class="brand-name">Pilah Nusantara</span>
+          <span class="brand-sub">Data kinerja pengelolaan sampah</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Navigasi utama">
+        <a href="#ringkasan">Ringkasan</a>
+        <a href="#indikator">Indikator</a>
+        <a href="#timbulan">Timbulan</a>
+        <a href="#data">Data kota/kabupaten</a>
+        <a href="#tentang">Tentang</a>
+      </nav>
+      <button class="btn btn-yellow btn-small" type="button" id="openLogin">Masuk</button>
+    </header>
+
+    <section class="hero" aria-labelledby="judul">
+      <div>
+        <h1 id="judul">Dari 100 ton sampah harian, baru 25 ton yang terkelola.</h1>
+        <p class="lead">Pantau timbulan sampah, kondisi TPA, dan kinerja pengelolaan di 514 kabupaten/kota Indonesia dalam satu halaman.</p>
+        <div class="hero-actions">
+          <a class="btn btn-yellow" href="#data">Lihat data kota/kabupaten</a>
+          <button class="btn btn-line" type="button" id="exportHero">Unduh data (CSV)</button>
+        </div>
+      </div>
+      <figure class="waffle-box" style="margin:0">
+        <div class="waffle" id="waffle" role="img" aria-label="Diagram 100 kotak: 25 kotak kuning menunjukkan sampah yang terkelola, 75 kotak redup menunjukkan sampah yang belum terkelola."></div>
+        <figcaption>
+          <p class="waffle-cap">1 kotak = 1% dari 144.157 ton sampah per hari.</p>
+          <div class="legend">
+            <span><i class="sw sw-managed"></i>Terkelola: 35.591 ton/hari</span>
+            <span><i class="sw sw-pile-dark"></i>Belum terkelola: 108.567 ton/hari</span>
+          </div>
+        </figcaption>
+      </figure>
+    </section>
+  </div>
+</div>
+
+<main>
+  <section class="section" id="ringkasan" aria-labelledby="h-ringkasan">
+    <div class="wrap">
+      <h2 id="h-ringkasan">Angka kunci nasional</h2>
+      <p class="intro">Data terverifikasi, pembaruan 2026.</p>
+      <dl class="figures">
+        <div class="fig"><dt>Timbulan sampah</dt><dd>144.157<span class="unit">ton/hari</span></dd></div>
+        <div class="fig"><dt>Sampah terkelola</dt><dd>35.591<span class="unit">ton/hari</span></dd></div>
+        <div class="fig"><dt>Sampah belum terkelola</dt><dd>108.567<span class="unit">ton/hari</span></dd></div>
+        <div class="fig"><dt>Jumlah penduduk</dt><dd>275,9<span class="unit">juta jiwa</span></dd></div>
+        <div class="fig"><dt>Jumlah TPA</dt><dd>506</dd></div>
+        <div class="fig"><dt><abbr title="Bank Sampah Unit">BSU</abbr> aktif</dt><dd>22.228</dd></div>
+        <div class="fig"><dt><abbr title="Bank Sampah Induk">BSI</abbr> aktif</dt><dd>410</dd></div>
+        <div class="fig"><dt><abbr title="Reduce, Reuse, Recycle">TPS 3R</abbr> aktif</dt><dd>2.882</dd></div>
+        <div class="fig"><dt>Rasio APBD</dt><dd>1,98%</dd></div>
+        <div class="fig"><dt>Koefisien</dt><dd>0,48</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="indikator" aria-labelledby="h-indikator">
+    <div class="wrap">
+      <h2 id="h-indikator">Pengawasan dan sebaran kota/kabupaten</h2>
+      <p class="intro">Seberapa jauh pembinaan berjalan, dan seperti apa komposisi daerah yang dipantau.</p>
+
+      <div class="two">
+        <div>
+          <h3>Pengawasan, pembinaan TPA, dan pengelolaan sampah</h3>
+
+          <div class="meter">
+            <div class="meter-head"><span>Progres sanksi administrasi</span><strong>49%</strong></div>
+            <div class="track" role="img" aria-label="48,92 persen dari target 100 persen"><div class="fill" style="--v:48.92%"></div></div>
+            <small>48,92% dari target 100%</small>
+          </div>
+
+          <div class="meter">
+            <div class="meter-head"><span>Sudah verifikasi lapangan</span><strong>94%</strong></div>
+            <div class="track" role="img" aria-label="488 dari 514 kabupaten/kota, 93,85 persen"><div class="fill" style="--v:93.85%"></div></div>
+            <small>488 dari 514 kabupaten/kota</small>
+          </div>
+
+          <div class="meter">
+            <div class="meter-head"><span>Sampah terkelola</span><strong>25%</strong></div>
+            <div class="track" role="img" aria-label="24,69 persen dari target 100 persen"><div class="fill" style="--v:24.69%"></div></div>
+            <small>24,69% dari target 100%, pada proses penanganan sampah</small>
+          </div>
+        </div>
+
+        <div>
+          <h3>Kabupaten/kota menurut ukuran</h3>
+          <div class="sizes" id="sizes"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="timbulan" aria-labelledby="h-timbulan">
+    <div class="wrap">
+      <h2 id="h-timbulan">Sepuluh daerah dengan timbulan sampah terbesar</h2>
+      <p class="intro">Panjang batang menunjukkan timbulan harian. Bagian kuning adalah yang sudah terkelola.</p>
+      <ol class="rank" id="rank"></ol>
+      <div class="legend-light">
+        <span><i class="sw sw-managed-l"></i>Terkelola</span>
+        <span><i class="sw sw-unmanaged"></i>Belum terkelola</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="data" aria-labelledby="h-data">
+    <div class="wrap">
+      <h2 id="h-data">Data pengelolaan sampah per kabupaten/kota</h2>
+      <p class="intro">Menampilkan 30 daerah dengan timbulan terbesar sebagai contoh. Cari nama daerah atau provinsi, lalu urutkan sesuai kebutuhan.</p>
+
+      <div class="tools">
+        <div class="field">
+          <label for="q">Cari kabupaten/kota atau provinsi</label>
+          <input id="q" type="search" placeholder="Contoh: Bekasi" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="jenis">Jenis TPA</label>
+          <select id="jenis">
+            <option value="">Semua jenis TPA</option>
+          </select>
+        </div>
+        <button class="btn btn-ghost" type="button" id="exportTable">Unduh hasil (CSV)</button>
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
+
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Tabel data, geser ke samping untuk melihat semua kolom">
+        <table>
+          <caption>Data pengelolaan sampah per kabupaten/kota</caption>
+          <thead>
+            <tr>
+              <th scope="col" aria-sort="none" data-key="nama"><button class="sort" type="button">Kabupaten/kota</button></th>
+              <th scope="col">Jenis TPA</th>
+              <th scope="col" class="num" aria-sort="descending" data-key="timbulan"><button class="sort" type="button">Timbulan (ton/hari)</button></th>
+              <th scope="col" class="num" aria-sort="none" data-key="kelola"><button class="sort" type="button">Terkelola</button></th>
+              <th scope="col">Rencana induk (RIPS)</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot" id="tentang">
+  <div class="wrap">
+    <p><strong>Pilah Nusantara</strong></p>
+    <p>Proyek latihan membuat dashboard data pengelolaan sampah. Angka contoh diambil dari Sistem Informasi Pengelolaan Sampah Nasional (SIPSN) KLH/BPLH, pembaruan 2026. Ini bukan situs resmi pemerintah.</p>
+    <p>Sumber data resmi: <a href="https://sampahnasional.kemenlh.go.id/" rel="noopener">sampahnasional.kemenlh.go.id</a></p>
+  </div>
+</footer>
+
+<dialog id="login" aria-labelledby="login-title">
+  <form class="dlg" id="loginForm">
+    <h2 id="login-title">Masuk</h2>
+    <p>Untuk operator dinas lingkungan hidup. Halaman ini hanya contoh dan belum terhubung ke server.</p>
+    <div class="field">
+      <label for="user">Nama pengguna</label>
+      <input id="user" name="user" type="text" autocomplete="username" required>
+    </div>
+    <div class="field">
+      <label for="pass">Kata sandi</label>
+      <input id="pass" name="pass" type="password" autocomplete="current-password" required>
+    </div>
+    <div class="dlg-actions">
+      <button class="btn btn-ghost btn-small" type="button" id="closeLogin">Batal</button>
+      <button class="btn btn-yellow btn-small" type="submit">Masuk</button>
+    </div>
+    <p id="loginMsg" role="status"></p>
+  </form>
+</dialog>
+
+<script>
+(function(){
+  /* nama, provinsi, jenis TPA, timbulan (ton/hari), % terkelola, status RIPS */
+  var rows = [
+    ["Kabupaten Bogor","Jawa Barat","Open dumping",2784,22.10,"Draft"],
+    ["Kabupaten Tangerang","Banten","Open dumping",2663,4.38,"Belum disahkan"],
+    ["Kota Jakarta Timur","DKI Jakarta","Open dumping",2455,16.28,"Disahkan"],
+    ["Kabupaten Bekasi","Jawa Barat","Open dumping",2404,2.58,"Disahkan"],
+    ["Kota Jakarta Selatan","DKI Jakarta","Open dumping",2005,19.97,"Disahkan"],
+    ["Kota Jakarta Barat","DKI Jakarta","Open dumping",1943,25.94,"Disahkan"],
+    ["Kota Surabaya","Jawa Timur","Sanitary landfill",1811,98.26,"Draft"],
+    ["Kota Bekasi","Jawa Barat","Open dumping",1801,5.52,"Belum ada"],
+    ["Kabupaten Bandung","Jawa Barat","Open dumping",1762,7.77,"Belum disahkan"],
+    ["Kota Medan","Sumatera Utara","Sanitary landfill",1740,71.37,"Belum disahkan"],
+    ["Kota Bandung","Jawa Barat","Open dumping",1574,22.18,"Disahkan"],
+    ["Kota Jakarta Utara","DKI Jakarta","Open dumping",1411,21.49,"Disahkan"],
+    ["Kota Tangerang","Banten","Open dumping",1370,11.09,"Belum disahkan"],
+    ["Kabupaten Cianjur","Jawa Barat","Open dumping",1305,2.67,"Disahkan"],
+    ["Kota Depok","Jawa Barat","Open dumping",1277,17.36,"Disahkan"],
+    ["Kota Palembang","Sumatera Selatan","Open dumping",1261,21.18,"Belum disahkan"],
+    ["Kabupaten Cirebon","Jawa Barat","Open dumping",1250,3.18,"Draft"],
+    ["Kabupaten Serang","Banten","Tidak memiliki TPA",1191,0.99,"Draft"],
+    ["Kota Semarang","Jawa Tengah","Open dumping",1190,8.27,"Disahkan"],
+    ["Kota Batam","Kepulauan Riau","Open dumping",1161,5.45,"Belum ada"],
+    ["Kabupaten Garut","Jawa Barat","Open dumping",1141,13.98,"Belum disahkan"],
+    ["Kabupaten Sukabumi","Jawa Barat","Open dumping",1128,23.94,"Belum ada"],
+    ["Kabupaten Indramayu","Jawa Barat","Open dumping",1122,8.59,"Disahkan"],
+    ["Kabupaten Malang","Jawa Timur","Controlled landfill",1094,48.88,"Belum ada"],
+    ["Kabupaten Karawang","Jawa Barat","Open dumping",1067,3.69,"Disahkan"],
+    ["Kota Pekanbaru","Riau","Open dumping",1051,22.05,"Belum disahkan"],
+    ["Kabupaten Jember","Jawa Timur","Open dumping",1046,1.89,"Dalam perencanaan"],
+    ["Kota Makassar","Sulawesi Selatan","Open dumping",1034,7.84,"Belum disahkan"],
+    ["Kabupaten Brebes","Jawa Tengah","Open dumping",1033,2.32,"Draft"],
+    ["Kota Denpasar","Bali","Open dumping",1033,10.73,"Disahkan"]
+  ];
+
+  var fmt = function(n,d){ return n.toLocaleString('id-ID',{minimumFractionDigits:d||0,maximumFractionDigits:d||0}); };
+  var $ = function(id){ return document.getElementById(id); };
+
+  /* ---- Waffle hero: 100 kotak, 25 terkelola (35.591 / 144.157) ---- */
+  var managedCells = Math.round(35591/144157*100);
+  var waffle = $('waffle'), html = '';
+  for (var i=0;i<100;i++){
+    html += '<span class="cell'+(i<managedCells?' on':'')+'" style="--i:'+i+'"></span>';
+  }
+  waffle.innerHTML = html;
+
+  /* ---- Sebaran ukuran kab/kota ---- */
+  var sizes = [
+    {judul:"Kota", total:94, data:[["Metropolitan",20,21.28],["Besar",10,10.64],["Sedang",58,61.70],["Kecil",6,6.38]]},
+    {judul:"Kabupaten", total:401, data:[["Metropolitan",66,16.46],["Besar",52,12.97],["Sedang",242,60.35],["Kecil",41,10.22]]}
+  ];
+  $('sizes').innerHTML = sizes.map(function(g){
+    return '<div><h4>'+g.judul+' ('+g.total+')</h4>'+
+      g.data.map(function(d){
+        return '<div class="size-row"><span>'+d[0]+'</span>'+
+          '<div class="track" role="img" aria-label="'+fmt(d[2],2)+' persen"><div class="fill" style="--v:'+d[2]+'%"></div></div>'+
+          '<b>'+d[1]+'</b></div>';
+      }).join('')+'</div>';
+  }).join('');
+
+  /* ---- Peringkat timbulan (10 teratas) ---- */
+  var top10 = rows.slice().sort(function(a,b){return b[3]-a[3];}).slice(0,10);
+  var max = top10[0][3];
+  $('rank').innerHTML = top10.map(function(r){
+    var w = r[3]/max*100;
+    return '<li>'+
+      '<span class="name">'+r[0]+'<small>'+r[1]+'</small></span>'+
+      '<div class="stack" style="width:'+w+'%" role="img" aria-label="'+fmt(r[4],2)+' persen terkelola">'+
+        '<span class="m" style="width:'+r[4]+'%"></span><span class="u" style="width:'+(100-r[4])+'%"></span></div>'+
+      '<span class="val">'+fmt(r[3])+' <small>ton/hari</small></span>'+
+    '</li>';
+  }).join('');
+
+  /* ---- Tabel: cari, filter, urut ---- */
+  var jenisList = Array.from(new Set(rows.map(function(r){return r[2];}))).sort();
+  $('jenis').insertAdjacentHTML('beforeend', jenisList.map(function(j){return '<option>'+j+'</option>';}).join(''));
+
+  var state = {q:'', jenis:'', key:'timbulan', dir:'desc'};
+  var idx = {nama:0, timbulan:3, kelola:4};
+  var current = [];
+
+  function apply(){
+    var q = state.q.trim().toLowerCase();
+    current = rows.filter(function(r){
+      var hit = !q || r[0].toLowerCase().indexOf(q)>-1 || r[1].toLowerCase().indexOf(q)>-1;
+      var jn = !state.jenis || r[2]===state.jenis;
+      return hit && jn;
+    });
+    var k = idx[state.key], m = state.dir==='asc'?1:-1;
+    current.sort(function(a,b){
+      var x=a[k], y=b[k];
+      return (typeof x==='string' ? x.localeCompare(y,'id') : x-y)*m;
+    });
+    render();
+  }
+
+  function render(){
+    var tb = $('tbody');
+    if(!current.length){
+      tb.innerHTML = '<tr><td class="empty" colspan="5">Tidak ada daerah yang cocok dengan pencarian. Ubah kata kunci atau pilih “Semua jenis TPA”.</td></tr>';
+    } else {
+      tb.innerHTML = current.map(function(r){
+        return '<tr>'+
+          '<td class="name">'+r[0]+'<span class="prov">'+r[1]+'</span></td>'+
+          '<td>'+r[2]+'</td>'+
+          '<td class="num">'+fmt(r[3])+'</td>'+
+          '<td class="num"><span class="pct"><span class="mini" aria-hidden="true"><i style="--v:'+r[4]+'%"></i></span>'+fmt(r[4],2)+'%</span></td>'+
+          '<td>'+r[5]+'</td>'+
+        '</tr>';
+      }).join('');
+    }
+    $('count').textContent = 'Menampilkan '+current.length+' dari '+rows.length+' daerah contoh.';
+  }
+
+  $('q').addEventListener('input', function(e){ state.q = e.target.value; apply(); });
+  $('jenis').addEventListener('change', function(e){ state.jenis = e.target.value; apply(); });
+
+  document.querySelectorAll('th[data-key]').forEach(function(th){
+    th.querySelector('.sort').addEventListener('click', function(){
+      var key = th.getAttribute('data-key');
+      if(state.key===key){ state.dir = state.dir==='asc'?'desc':'asc'; }
+      else { state.key = key; state.dir = key==='nama'?'asc':'desc'; }
+      document.querySelectorAll('th[data-key]').forEach(function(t){ t.setAttribute('aria-sort','none'); });
+      th.setAttribute('aria-sort', state.dir==='asc'?'ascending':'descending');
+      apply();
+    });
+  });
+
+  /* ---- Unduh CSV ---- */
+  function exportCSV(list){
+    var head = ['Kabupaten/kota','Provinsi','Jenis TPA','Timbulan (ton/hari)','Terkelola (%)','Status RIPS'];
+    var lines = [head].concat(list.map(function(r){return r;})).map(function(r){
+      return r.map(function(c){ return '"'+String(c).replace(/"/g,'""')+'"'; }).join(',');
+    });
+    var blob = new Blob(['\ufeff'+lines.join('\n')], {type:'text/csv;charset=utf-8'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'data-pengelolaan-sampah.csv';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 500);
+  }
+  $('exportTable').addEventListener('click', function(){ exportCSV(current); });
+  $('exportHero').addEventListener('click', function(){ exportCSV(rows); });
+
+  /* ---- Dialog login (contoh) ---- */
+  var dlg = $('login');
+  $('openLogin').addEventListener('click', function(){ $('loginMsg').textContent=''; dlg.showModal(); });
+  $('closeLogin').addEventListener('click', function(){ dlg.close(); });
+  dlg.addEventListener('click', function(e){ if(e.target===dlg) dlg.close(); });
+  $('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    $('loginMsg').textContent = 'Login belum terhubung ke server. Hubungkan formulir ini ke API autentikasi Anda.';
+  });
+
+  apply();
+})();
+</script>
+</body>
+</html>
